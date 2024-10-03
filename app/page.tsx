@@ -1,7 +1,6 @@
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import  Hero  from "../components/Hero";
 import Image from "next/image";
-import Link from "next/link";
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 import { Timeline } from "@/components/ui/timeline";
 
@@ -54,7 +53,7 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-1">
        
             <Image
-              src="/images/timeline/history07_terra.jpg"
+              src="/Images/timeline/history07_terra.jpg"
               alt="startup template"
               width={500}
               height={500}
@@ -74,7 +73,7 @@ export default function Home() {
         
           <div className="grid grid-cols-1 gap-1">
             <Image
-              src="/images/timeline/pace_spectral_coverage_v0.png"
+              src="/Images/timeline/pace_spectral_coverage_v0.png"
               alt="hero template"
               width={500}
               height={500}
@@ -94,7 +93,7 @@ export default function Home() {
         
           <div className="grid grid-cols-1 gap-1">
             <Image
-              src="/images/timeline/2018.jpg"
+              src="/Images/timeline/2018.jpg"
               alt="hero template"
               width={500}
               height={500}
@@ -114,7 +113,7 @@ export default function Home() {
         
           <div className="grid grid-cols-1 gap-1">
             <Image
-              src="/images/timeline/harp.jpg"
+              src="/Images/timeline/harp.jpg"
               alt="hero template"
               width={500}
               height={500}
@@ -134,7 +133,7 @@ export default function Home() {
         
           <div className="grid grid-cols-1 gap-1">
             <Image
-              src="/images/timeline/2023.jpg"
+              src="/Images/timeline/2023.jpg"
               alt="hero template"
               width={500}
               height={500}
@@ -154,7 +153,7 @@ export default function Home() {
         
           <div className="grid grid-cols-1 gap-1">
             <Image
-              src="/images/timeline/launch.jpg"
+              src="/Images/timeline/launch.jpg"
               alt="hero template"
               width={500}
               height={500}
@@ -174,7 +173,7 @@ export default function Home() {
         
           <div className="grid grid-cols-1 gap-1">
             <Image
-              src="/images/timeline/pace_first_light_composite.png"
+              src="/Images/timeline/pace_first_light_composite.png"
               alt="feature template"
               width={500}
               height={500}

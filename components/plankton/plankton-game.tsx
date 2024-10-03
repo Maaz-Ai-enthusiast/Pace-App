@@ -11,7 +11,7 @@ interface Plankton {
 }
 
 const foodWebFacts = [
-  "Plankton form the base of the ocean's food web!",
+  "Plankton form the base of the oceans food web!",
   "Zooplankton rely on plankton as their primary food source.",
   "Fish, birds, and marine mammals depend on plankton for survival.",
   "Healthy plankton populations support the entire marine ecosystem.",
@@ -93,7 +93,7 @@ const PlanktonGame = () => {
           Catch the Planktons!
         </h1>
         <p className="text-center text-white text-lg mt-4 max-w-md">
-          Plankton are vital to the ocean's food web. Zooplankton, fish, birds, and marine mammals depend on them for survival. By catching plankton, you're helping sustain the entire marine ecosystem!
+          Plankton are vital to the oceans food web. Zooplankton, fish, birds, and marine mammals depend on them for survival. By catching plankton, you are helping sustain the entire marine ecosystem!
         </p>
 
         {/* Score and Current Fact */}

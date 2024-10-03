@@ -4,6 +4,8 @@ import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 import PlanktonGame from '../../components/plankton-game';  // Adjust the path based on your file structure
 
 
+
+
 export default function Home() {
   return (
     <main className="relative  flex justify-center items-center flex-col
@@ -41,11 +43,6 @@ export default function Home() {
     }]}/>
     <Hero />
     <PlanktonGame />
-
-
-
-
-  
 
     </main>
     
