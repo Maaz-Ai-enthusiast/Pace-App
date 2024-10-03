@@ -5,7 +5,6 @@ import Image from 'next/image';
 import planktonImg from '../../public/Images/assests/plankton.png'; // Default Satellite image
 import alternateImg from '../../public/Images/assests/alt-plankton.png'; // Alternate Plankton image
 import { Spotlight } from '../ui/Spotlight';
-import { AuroraBackground } from '../ui/aurora-background';
 import { TextGenerateEffect } from '../ui/text-generate-effect';
 
 
