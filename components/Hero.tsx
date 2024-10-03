@@ -42,7 +42,7 @@ const EarthOrbit = () => {
 
 <div className="flex flex-col justify-center items-center h-screen w-full md:w-1/2 relative p-10 bg-gradient-to-r from-gray-900 to-gray-700 text-white">
   <p className="uppercase text-4xl sm:text-6xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8 shadow-lg">
-    This is how I revolve around the Earth
+    This is how I revolve around the Earth !
   </p>
   
   <TextGenerateEffect 
