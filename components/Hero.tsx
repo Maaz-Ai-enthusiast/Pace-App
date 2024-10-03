@@ -7,6 +7,9 @@ import { Spotlight } from './ui/Spotlight';
 import { AuroraBackground } from './ui/aurora-background';
 import { TextGenerateEffect } from './ui/text-generate-effect';
 
+
+
+
 const EarthOrbit = () => {
   return (
 <div className="relative flex flex-col md:flex-row justify-center items-center w-full h-screen bg-black overflow-hidden m-0">
@@ -33,17 +36,19 @@ const EarthOrbit = () => {
   </div>
 </div>
 
+
+
 {/* Right Section: Hero text */}
+
+
 <div className="flex flex-col justify-center items-center h-screen w-full md:w-1/2 relative p-10">
+  
   <p className="uppercase text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8">
     This is how I revolve around our Earth
   </p>
+  
+
   <TextGenerateEffect className='text-center text-[100px] md:text-5xl lg:text-9xl' words='This is how I revolve around our Earth'/>
-  <div className="absolute bottom-10 text-white text-xl">
-    <h1 className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-      I Am PACE satellite
-    </h1>
-  </div>
 </div>
 </div>
 
