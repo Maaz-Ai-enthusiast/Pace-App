@@ -1,7 +1,9 @@
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import  Hero  from "../../components/plankton/Hero";
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
-import PlanktonGame from '../../components/plankton/plankton-game';  // Adjust the path based on your file structure
+import PlanktonGame from '../../components/plankton-game';  // Adjust the path based on your file structure
+
+
 
 
 export default function Home() {

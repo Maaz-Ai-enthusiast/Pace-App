@@ -1,5 +1,4 @@
 import { FloatingNav } from "@/components/ui/floating-navbar";
-import  Hero  from "../../components/Hero";
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 
 
@@ -39,7 +38,7 @@ export default function Home() {
         <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />
       ),
     }]}/>
-    <Hero />
+
     
 
 
