@@ -1,5 +1,5 @@
 import { FloatingNav } from "@/components/ui/floating-navbar";
-import  Hero  from "../../components/Hero";
+import  Hero  from "../../components/plankton/Hero";
 import Image from "next/image";
 import Link from "next/link";
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";

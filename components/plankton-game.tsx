@@ -1,7 +1,7 @@
-"use client";  // Ensures this component is a Client Component
+"use client"; // Ensures this component is a Client Component
 
 import { useState, useEffect } from "react";
-import Image from "next/image"; // Import Image component for optimization
+import Image from "next/image"; // Import Image component for optimized images
 
 // Define the Plankton type
 interface Plankton {
@@ -10,7 +10,6 @@ interface Plankton {
   left: string;
 }
 
-// Facts about plankton and the food web
 const foodWebFacts = [
   "Plankton form the base of the ocean's food web!",
   "Zooplankton rely on plankton as their primary food source.",
@@ -20,27 +19,63 @@ const foodWebFacts = [
 ];
 
 const PlanktonGame = () => {
-  const [planktons, setPlanktons] = useState<Plankton[]>(generatePlanktons(5)); // 5 planktons initially
+  const [planktons, setPlanktons] = useState<Plankton[]>(generatePlanktons(5)); // Start with 5 planktons
   const [score, setScore] = useState<number>(0);
   const [currentFact, setCurrentFact] = useState<string>("Catch plankton to help marine life!");
+  const [fishVisible, setFishVisible] = useState<boolean>(false); // Show fish or oxygen icon when planktons increase
 
-  // Function to generate random planktons
+  // State to manage counts of whales, fish, and O2 icons
+  const [whaleCount, setWhaleCount] = useState<number>(0);
+  const [fishCount, setFishCount] = useState<number>(0);
+  const [oxygenCount, setO2Count] = useState<number>(0);
+
+  // Function to generate random planktons within the container
   function generatePlanktons(num: number): Plankton[] {
+    const containerHeight = 500; // Set container height
+    const containerWidth = 500;  // Set container width
+  
     return Array.from({ length: num }, () => ({
       id: Math.random(),
-      top: Math.random() * 80 + "vh",
-      left: Math.random() * 80 + "vw",
+      top: Math.random() * (containerHeight - 50) + "px", // Prevent going out of bounds
+      left: Math.random() * (containerWidth - 50) + "px", // Prevent going out of bounds
     }));
   }
-
-  // Function to handle clicking on planktons
+  
+  // Function to handle catching planktons
   const catchPlankton = (id: number) => {
     setPlanktons(planktons.filter((plankton) => plankton.id !== id));
     setScore(score + 1);
 
+    setFishCount(fishCount > 0 ? fishCount - 1 : 0);
+    setWhaleCount(whaleCount > 0 ? whaleCount - 1 : 0);
+    setO2Count(oxygenCount > 0 ? oxygenCount - 1 : 0);
+    
     // Show a new fact when plankton is caught
     const newFact = foodWebFacts[Math.floor(Math.random() * foodWebFacts.length)];
     setCurrentFact(newFact);
+  };
+
+  // Function to increase planktons (up arrow click)
+  const increasePlanktons = () => {
+    setPlanktons([...planktons, ...generatePlanktons(5)]); // Add 5 more planktons
+    setFishVisible(true); // Show fish or oxygen when planktons increase
+
+    // Increment the counts of whales, fish, and O2
+    setWhaleCount(whaleCount + 1);
+    setFishCount(fishCount + 1);
+    setO2Count(oxygenCount + 1);
+  };
+
+  // Function to decrease planktons (down arrow click)
+  const decreasePlanktons = () => {
+    if (planktons.length > 5) {
+      setPlanktons(planktons.slice(0, -5));
+  
+      // Decrease the counters when planktons decrease, ensuring they don't go below 0
+      setFishCount(fishCount > 0 ? fishCount - 1 : 0);
+      setWhaleCount(whaleCount > 0 ? whaleCount - 1 : 0);
+      setO2Count(oxygenCount > 0 ? oxygenCount - 1 : 0);
+    }
   };
 
   // Regenerate planktons if all are caught
@@ -51,43 +86,116 @@ const PlanktonGame = () => {
   }, [planktons]);
 
   return (
-    <div className="relative h-screen w-full bg-gradient-to-b from-blue-300 via-blue-500 to-blue-700">
-      {/* Introductory Description */}
-      <h1 className="text-center text-4xl font-extrabold text-white mt-6 animate-pulse">
-        Catch the Planktons!
-      </h1>
-      <p className="text-center text-white text-lg mt-4 max-w-md mx-auto">
-        Plankton are vital to the ocean's food web. Zooplankton, fish, birds, and marine mammals depend on them for survival. By catching plankton, you're helping to sustain the entire marine ecosystem!
-      </p>
-      
-      {/* Score and Current Fact */}
-      <p className="text-center text-white text-2xl mt-4">Score: {score}</p>
-      <p className="text-center text-white text-xl mt-2 italic">{currentFact}</p>
+    <div className="relative h-screen w-full bg-gradient-to-b from-blue-300 via-blue-500 to-blue-700 flex flex-col justify-center items-center">
+      <div className="relative w-11/12 h-5/6 border-4 border-white rounded-lg p-6 shadow-lg bg-blue-600 flex flex-col items-center">
+        {/* Game Header */}
+        <h1 className="text-center text-4xl font-extrabold text-white mt-6 animate-pulse">
+          Catch the Planktons!
+        </h1>
+        <p className="text-center text-white text-lg mt-4 max-w-md">
+          Plankton are vital to the ocean's food web. Zooplankton, fish, birds, and marine mammals depend on them for survival. By catching plankton, you're helping sustain the entire marine ecosystem!
+        </p>
 
-      {/* Planktons */}
-      {planktons.map((plankton) => (
-        <div
-          key={plankton.id}
-          onClick={() => catchPlankton(plankton.id)}
-          className="absolute cursor-pointer transform hover:scale-125 transition-transform duration-200"
-          style={{
-            top: plankton.top,
-            left: plankton.left,
-          }}
-        >
-          <Image
-            src="/images/assests/plankton.png"  // Path to your plankton image
-            alt="Plankton"
-            width={50}  // Set width and height for the plankton image
-            height={50}
-            className="rounded-full"
-          />
+        {/* Score and Current Fact */}
+        <p className="text-center text-white text-2xl mt-4">Score: {score}</p>
+        <p className="text-center text-white text-xl mt-2 italic">{currentFact}</p>
+
+        {/* Control Arrows */}
+        <div className="absolute top-10 right-10 flex flex-col items-center">
+          {/* Up Arrow */}
+          <button
+            onClick={increasePlanktons}
+            className="text-white text-4xl mb-2 hover:text-green-500 transition"
+          >
+            ⬆️
+          </button>
+          {/* Down Arrow */}
+          <button
+            onClick={decreasePlanktons}
+            className="text-white text-4xl hover:text-red-500 transition"
+          >
+            ⬇️
+          </button>
         </div>
-      ))}
 
-      <p className="text-center mt-8 text-white text-sm">
-        Keep catching the planktons to increase your score and help marine life thrive!
-      </p>
+        {/* Plankton Container */}
+        <div className="relative flex-grow w-full max-w-[500px] h-full border-4 border-white rounded-lg overflow-hidden mt-8">
+          {/* Planktons */}
+          {planktons.map((plankton) => (
+            <div
+              key={plankton.id}
+              onClick={() => catchPlankton(plankton.id)}
+              className="absolute cursor-pointer transform hover:scale-125 transition-transform duration-200"
+              style={{
+                top: plankton.top,
+                left: plankton.left,
+              }}
+            >
+              <Image
+                src="/images/assests/plankton.png" // Path to your plankton image
+                alt="Plankton"
+                width={50} // Set width and height for the plankton image
+                height={50}
+                className="rounded-full"
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Icons Section */}
+        <div className="absolute bottom-10 left-7 flex space-x-4">
+          {fishVisible && (
+            <div className="flex flex-col items-center">
+              <p className="text-white text-lg mb-1">{fishCount}</p> {/* Fish counter */}
+              <Image
+                src="/images/assests/clown-fish.png"
+                alt="Fish representing marine life"
+                width={50}
+                height={50}
+                className="opacity-105"
+              />
+            </div>
+          )}
+          {fishVisible && (
+            <div className="flex flex-col items-center">
+              <p className="text-white text-lg mb-1">{oxygenCount}</p> {/* Oxygen counter */}
+              <Image
+                src="/images/assests/o2.png"
+                alt="Oxygen representing marine life"
+                width={50}
+                height={50}
+                className="opacity-105"
+              />
+            </div>
+          )}
+
+          {fishVisible && (
+            <div className="flex flex-col items-center">
+              <p className="text-white text-lg mb-1">{whaleCount}</p> {/* Whale counter */}
+              <Image
+                src="/images/assests/whale.png"
+                alt="Whale representing marine life"
+                width={50}
+                height={50}
+                className="opacity-105"
+              />
+            </div>
+          )}
+
+        {fishVisible && (
+            <div className="flex flex-col items-center">
+              <p className="text-white text-lg mb-1">{whaleCount}</p> {/* Whale counter */}
+              <Image
+                src="/images/assests/oil-rig.png"
+                alt="Whale representing marine life"
+                width={50}
+                height={50}
+                className="opacity-105"
+              />
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };

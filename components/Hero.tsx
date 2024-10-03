@@ -4,7 +4,6 @@ import Image from 'next/image';
 import earthImg from '../public/Images/assests/earth.png';
 import satelliteImg from '../public/images/assests/satellite.png';
 import { Spotlight } from './ui/Spotlight';
-import { AuroraBackground } from './ui/aurora-background';
 import { TextGenerateEffect } from './ui/text-generate-effect';
 
 
@@ -41,15 +40,20 @@ const EarthOrbit = () => {
 {/* Right Section: Hero text */}
 
 
-<div className="flex flex-col justify-center items-center h-screen w-full md:w-1/2 relative p-10">
-  
-  <p className="uppercase text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8">
-    This is how I revolve around our Earth
+<div className="flex flex-col justify-center items-center h-screen w-full md:w-1/2 relative p-10 bg-gradient-to-r from-gray-900 to-gray-700 text-white">
+  <p className="uppercase text-4xl sm:text-6xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8 shadow-lg">
+    This is how I revolve around the Earth
   </p>
   
-
-  <TextGenerateEffect className='text-center text-[100px] md:text-5xl lg:text-9xl' words='This is how I revolve around our Earth'/>
+  <TextGenerateEffect 
+    className="text-center text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 animate-textFadeIn transition duration-500 ease-in-out transform hover:scale-105"
+    words="To explore how our Earth functions and understand the factors that affect it" 
+  />
+  
+  <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-t from-black to-transparent z-10 pointer-events-none"></div>
+  
 </div>
+
 </div>
 
 
