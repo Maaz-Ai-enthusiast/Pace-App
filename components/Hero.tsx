@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import earthImg from '../public/Images/assests/earth.png';
-import satelliteImg from '../public/images/assests/satellite.png';
+import satelliteImg from '../public/Images/assests/satellite.png';
 import { Spotlight } from './ui/Spotlight';
 import { TextGenerateEffect } from './ui/text-generate-effect';
 

@@ -132,7 +132,7 @@ const PlanktonGame = () => {
               }}
             >
               <Image
-                src="/images/assests/plankton.png" // Path to your plankton image
+                src="/Images/assests/plankton.png" // Path to your plankton image
                 alt="Plankton"
                 width={50} // Set width and height for the plankton image
                 height={50}
@@ -148,7 +148,7 @@ const PlanktonGame = () => {
             <div className="flex flex-col items-center">
               <p className="text-white text-lg mb-1">{fishCount}</p> {/* Fish counter */}
               <Image
-                src="/images/assests/clown-fish.png"
+                src="/Images/assests/clown-fish.png"
                 alt="Fish representing marine life"
                 width={50}
                 height={50}
@@ -160,7 +160,7 @@ const PlanktonGame = () => {
             <div className="flex flex-col items-center">
               <p className="text-white text-lg mb-1">{oxygenCount}</p> {/* Oxygen counter */}
               <Image
-                src="/images/assests/o2.png"
+                src="/Images/assests/o2.png"
                 alt="Oxygen representing marine life"
                 width={50}
                 height={50}
@@ -173,7 +173,7 @@ const PlanktonGame = () => {
             <div className="flex flex-col items-center">
               <p className="text-white text-lg mb-1">{whaleCount}</p> {/* Whale counter */}
               <Image
-                src="/images/assests/whale.png"
+                src="/Images/assests/whale.png"
                 alt="Whale representing marine life"
                 width={50}
                 height={50}
@@ -186,7 +186,7 @@ const PlanktonGame = () => {
             <div className="flex flex-col items-center">
               <p className="text-white text-lg mb-1">{whaleCount}</p> {/* Whale counter */}
               <Image
-                src="/images/assests/oil-rig.png"
+                src="/Images/assests/oil-rig.png"
                 alt="Whale representing marine life"
                 width={50}
                 height={50}
