@@ -29,7 +29,7 @@ const foodWebFacts = [
 ];
 
 
-const PlanktonGame = () => {
+const EcosystemGame = () => {
   const [planktons, setPlanktons] = useState<Plankton[]>(generatePlanktons(5)); // Start with 5 planktons
   const [score, setScore] = useState<number>(0);
   const [currentFact, setCurrentFact] = useState<string>("Catch plankton to help marine life!");
@@ -238,4 +238,4 @@ const decreasePlanktons = () => {
   );
 };
 
-export default PlanktonGame;
+export default EcosystemGame;

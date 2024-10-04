@@ -1,7 +1,7 @@
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import  Hero  from "../../components/aerosal/Hero";
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
-import PlanktonGame from '../../components/aerosal/aerosal-game';  // Adjust the path based on your file structure
+import AerosalGame from '../../components/aerosal/aerosal-game';  // Adjust the path based on your file structure
 import { StickyScroll } from "../../components/ui/sticky-scroll-reveal";
 import Image from "next/image";
 
@@ -110,7 +110,7 @@ export default function Home() {
       ),
     }]}/>
     <Hero />
-    <PlanktonGame />
+    <AerosalGame />
 
     <div className="w-full h-full">
       <StickyScroll content={content} />

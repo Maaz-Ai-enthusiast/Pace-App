@@ -44,12 +44,12 @@ const EarthOrbit = () => {
       {/* Right Section: Hero text */}
       <div className="flex flex-col justify-center items-center h-screen w-full md:w-1/2 relative p-10 bg-gradient-to-r from-gray-900 to-gray-700 text-white">
         <p className="uppercase text-4xl sm:text-6xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8 shadow-lg">
-          My name is plankton
+          i am plankton
         </p>
 
         <TextGenerateEffect
           className="text-center text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 animate-textFadeIn transition duration-500 ease-in-out transform hover:scale-105"
-          words="I am very important for life"
+          words="Want to know the ocean's secret? Its me! Im the life of the sea!"
         />
 
        
