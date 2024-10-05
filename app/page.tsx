@@ -6,42 +6,29 @@ import { Timeline } from "@/components/ui/timeline";
 
 
 
+
 export default function Home() {
   return (
     <main className="relative  flex justify-center items-center flex-col
     overflow-hidden mx-auto ">
-    <FloatingNav navItems={[{
-      name: "Pace",
-      link: "/",
-      icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
-    },
-    {
-      name: "Planktons",
-      link: "/planktons",
-      icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
-    },
-    {
-      name: "Aerosol ",
-      link: "/aerosols",
-      icon: (
-        <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />
-      ),
-    },
-    {
-      name: "Clouds",
-      link: "/clouds",
-      icon: (
-        <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />
-      ),
-    },
-    {
-      name: "Ocean Ecosystem",
-      link: "/ocean-ecosystem",
-      icon: (
-        <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />
-      ),
-    }]}/>
+
     <Hero />
+
+    <div className="flex justify-center my-10 p-11 h-30">
+      <div className="border-4 border-gray-300 rounded-lg shadow-lg p-0">
+        <video
+          className="w-30 h-auto" // Change here
+          controls
+          autoPlay
+          loop
+          muted // Optional: Use this to mute the video
+        >
+          <source src="/video/Pace-2.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  
     
     <Timeline data={[ {
       title: "Idea | 2007–2014",

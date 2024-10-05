@@ -3,6 +3,9 @@
 import { useState, useEffect } from "react";
 import Image from "next/image"; // Import Image component for optimized images
 
+
+
+
 // Define the Plankton type
 interface Plankton {
   id: number;
@@ -111,6 +114,7 @@ const decreasePlanktons = () => {
     <div className="relative h-screen w-full bg-gradient-to-b from-blue-300 via-blue-500 to-blue-700 flex flex-col justify-center items-center">
   <div className="relative w-11/12 h-5/6  p-3 flex flex-col items-center">
     {/* Game Header */}
+    <h1 className="text-center text-4xl font-extrabold text-white mt-6 animate-pulse"> Play the Game</h1>
     <h1 className="text-center text-4xl font-extrabold text-white mt-6 animate-pulse">
       Catch the Planktons!
     </h1>

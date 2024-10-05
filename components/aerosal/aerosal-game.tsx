@@ -113,6 +113,7 @@ const AerosolGame = () => {
     <div className="relative h-screen w-full bg-gradient-to-b from-gray-300 via-gray-500 to-gray-700 flex flex-col justify-center items-center">
       <div className="relative w-11/12 h-5/6 p-3 flex flex-col items-center">
         {/* Game Header */}
+        <h1 className="text-center text-4xl font-extrabold text-white mt-6 animate-pulse"> Play the Game</h1>
         <h1 className="text-center text-4xl font-extrabold text-white mt-6 animate-pulse">
           Clean the Air!
         </h1>
@@ -124,12 +125,12 @@ const AerosolGame = () => {
         <p className="text-center text-white text-2xl mt-4">Score: {score}</p>
         <p className="text-center text-white text-xl mt-2 italic">{currentFact}</p>
 
-              // Slider to control aerosol levels
+            Slider to control aerosol levels
       <div className="absolute top-10 right-10 flex flex-col items-center">
         <input
           type="range"
           min="5" // Minimum number of aerosols
-          max="50" // Maximum number of aerosols
+          max="400" // Maximum number of aerosols
           value={aerosolAmount}
           onChange={(e) => {
             const newAerosolAmount = Number(e.target.value);
@@ -139,8 +140,8 @@ const AerosolGame = () => {
             if (newAerosolAmount > aerosols.length) {
               setAerosols([...aerosols, ...generateAerosols(newAerosolAmount - aerosols.length)]);
               setFactoryVisible(true);
-              setFactoryCount(factoryCount + 1);
-              setSmogCount(smogCount + 1);
+              setFactoryCount(factoryCount + 10);
+              setSmogCount(smogCount + 10);
               setAirQualityIndex(airQualityIndex + 10);
             } else if (newAerosolAmount < aerosols.length) {
               setAerosols(aerosols.slice(0, newAerosolAmount));
@@ -156,7 +157,7 @@ const AerosolGame = () => {
 
 
         {/* Aerosol Container */}
-        <div className="relative flex-grow w-full max-w-[500px] h-full border-4 border-white rounded-lg overflow-hidden mt-8 bg-[url('/Images/assests/sky.jpg')] bg-cover bg-center">
+        <div className="relative flex-grow w-full max-w-[500px] h-full border-4 border-white rounded-lg overflow-hidden mt-8 bg-[url('/Images/assests/a/sky.jpeg')] bg-cover bg-center">
           {/* Aerosols */}
           {aerosols.map((aerosol) => (
             <div
@@ -169,7 +170,7 @@ const AerosolGame = () => {
               }}
             >
               <Image
-                src="/Images/assests/aerosol.png" // Path to your aerosol image
+                src="/Images/assests/a/dot.png" // Path to your aerosol image
                 alt="Aerosol"
                 width={50}
                 height={50}
@@ -186,7 +187,7 @@ const AerosolGame = () => {
           <div className="flex flex-col items-center">
             <p className="text-white text-lg mb-1">{factoryCount}</p> {/* Factory counter */}
             <Image
-              src="/Images/assests/factory.png"
+              src="/Images/assests/a/factory.png"
               alt="Factory representing pollution"
               width={50}
               height={50}
@@ -198,7 +199,7 @@ const AerosolGame = () => {
           <div className="flex flex-col items-center">
             <p className="text-white text-lg mb-1">{smogCount}</p> {/* Smog counter */}
             <Image
-              src="/Images/assests/smog.png"
+              src="/Images/assests/a/smog.png"
               alt="Smog cloud"
               width={50}
               height={50}
@@ -209,7 +210,7 @@ const AerosolGame = () => {
         <div className="flex flex-col items-center">
           <p className="text-white text-lg mb-1">{treeCount}</p> {/* Tree counter */}
           <Image
-            src="/Images/assests/tree.png"
+            src="/Images/assests/a/tree.png"
             alt="Tree representing clean air"
             width={50}
             height={50}

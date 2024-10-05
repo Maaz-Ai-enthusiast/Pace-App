@@ -13,15 +13,16 @@
     "@tabler/icons-react": "^3.19.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.9.0",
+    "framer-motion": "^11.11.1",
     "lucide-react": "^0.446.0",
     "mini-svg-data-uri": "^1.4.4",
     "next": "14.2.13",
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-joyride": "^2.9.2",
     "simplex-noise": "^4.0.3",
-    "tailwind-merge": "^2.5.2",
+    "tailwind-merge": "^2.5.3",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {

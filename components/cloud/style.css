@@ -1,0 +1,26 @@
+body {
+  background-image: url('/path/to/cloud-image.png'); /* Add your cloud image */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.rain {
+  position: absolute;
+  bottom: 0;
+  opacity: 0.7;
+  animation: rain 1.5s linear forwards;
+}
+
+#rain-container {
+  position: relative;
+  overflow: hidden; /* Prevent raindrops from overflowing */
+  height: 170px; /* Adjust height based on your design */
+}
+
+
+@keyframes rain {
+  to {
+    transform: translateY(100vh); /* Move raindrop to the bottom of the viewport */
+    opacity: 0; /* Fade out */
+  }
+}
