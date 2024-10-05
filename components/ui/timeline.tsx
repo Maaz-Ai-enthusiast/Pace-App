@@ -41,7 +41,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           PACE SATALLITE TIMELINE
         </h2>
         <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
-          I&apos;ve been working from the past last 10 months in the space!
+          I&apos;ve been working from the last 10 months in space!
         </p>
       </div>
 
